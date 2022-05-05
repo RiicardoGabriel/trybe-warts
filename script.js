@@ -1,6 +1,6 @@
-let inputEm = document.getElementById('inputEmail');
-let inputPass = document.getElementById('inputPassword');
-let btnSubmit = document.getElementById('btn-submit');
+const inputEm = document.getElementById('inputEmail');
+const inputPass = document.getElementById('inputPassword');
+const btnSubmit = document.getElementById('btn-submit');
 
 function Entrar() {
   if (inputEm.value === 'tryber@teste.com' && inputPass.value === '123456') {
