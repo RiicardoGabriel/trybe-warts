@@ -11,3 +11,14 @@ function Entrar() {
 }
 
 btnSubmit.addEventListener('click', Entrar);
+
+const checkAgreement = document.getElementById('agreement');
+const submitButton = document.getElementById('submit-btn');
+
+checkAgreement.addEventListener('click', () => {
+  if (checkAgreement.checked === false) {
+    submitButton.disabled = true;
+  } else {
+    document.getElementById('submit-btn').disabled = false;
+  }
+});
