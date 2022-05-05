@@ -22,3 +22,10 @@ checkAgreement.addEventListener('click', () => {
     document.getElementById('submit-btn').disabled = false;
   }
 });
+
+function counter() {
+  const textarea = document.getElementById('textarea').value;
+  document.getElementById('counter').innerText = 500 - textarea.length;
+}
+
+counter();
