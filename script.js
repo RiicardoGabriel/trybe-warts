@@ -19,7 +19,7 @@ checkAgreement.addEventListener('click', () => {
   if (checkAgreement.checked === false) {
     submitButton.disabled = true;
   } else {
-    document.getElementById('submit-btn').disabled = false;
+    submitButton.disabled = false;
   }
 });
 
@@ -30,25 +30,76 @@ function counter() {
 
 counter();
 
-const inputName = document.getElementById('input-name').value;
-const inputLastName = document.getElementById('input-lastname').value;
+function nameLastName() {
+  let string = '';
+  const name = document.querySelector('#input-name').value;
+  const lastName = document.querySelector('#input-lastname').value;
+  if (name != null && lastName != null) {
+    string = `Nome: ${name} ${lastName}`;
+  }
+  return string;
+}
 
-const inputEmail = document.getElementById('input-email').value;
+function email() {
+  let stringEmail = '';
+  const emailName = document.querySelector('#input-email').value;
+  if (emailName != null) {
+    stringEmail = `Email: ${emailName}`;
+  }
+  return stringEmail;
+}
 
 const house = document.getElementById('house');
-house.addEventListener('change', () => {
-  console.log(house.value);
-});
+function pickHouse() {
+  return `Casa: ${house.value}`;
+}
+
+house.addEventListener('change', pickHouse);
 
 function pickFamlily() {
-  const family = document.getElementsByClassName('trybe-family');
+  const family = document.getElementsByName('family');
   let array = '';
-  for (let index = 0; index < family.length; index += 0) {
+  for (let index = 0; index < family.length; index += 1) {
     if (family[index].checked) {
       array = family[index].value;
     }
   }
-  console.log(array);
+  return `Família: ${array}`;
 }
 
-submitButton.addEventListener('click', pickFamlily);
+function pickSubject() {
+  const subject = document.getElementsByClassName('subject');
+  let array = ' ';
+  for (let index = 0; index < subject.length; index += 1) {
+    if (subject[index].checked) {
+      array += `${subject[index].value}, `;
+    }
+  }
+  return `Matérias: ${array}`;
+}
+
+function pickNote() {
+  const rate = document.getElementsByName('rate');
+  let array = ' ';
+  for (let index = 0; index < rate.length; index += 1) {
+    if (rate[index].checked) {
+      array += rate[index].value;
+    }
+  }
+  return `Avaliação: ${array}`;
+}
+
+function reviewHere() {
+  const review = document.getElementById('textarea').value;
+  return `Observações: ${review}`;
+}
+
+submitButton.addEventListener('click', () => {
+  const form = document.getElementById('evaluation-form');
+  const quebraLinha = '<br>';
+  const nameAndEmail = nameLastName() + quebraLinha + email() + quebraLinha;
+  const houseFamily = pickHouse() + quebraLinha + pickFamlily() + quebraLinha;
+  const subjectReview = pickSubject() + quebraLinha + pickNote() + quebraLinha + reviewHere();
+
+  form.innerHTML = nameAndEmail + houseFamily + subjectReview;
+});
