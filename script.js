@@ -29,3 +29,26 @@ function counter() {
 }
 
 counter();
+
+const inputName = document.getElementById('input-name').value;
+const inputLastName = document.getElementById('input-lastname').value;
+
+const inputEmail = document.getElementById('input-email').value;
+
+const house = document.getElementById('house');
+house.addEventListener('change', () => {
+  console.log(house.value);
+});
+
+function pickFamlily() {
+  const family = document.getElementsByClassName('trybe-family');
+  let array = '';
+  for (let index = 0; index < family.length; index += 0) {
+    if (family[index].checked) {
+      array = family[index].value;
+    }
+  }
+  console.log(array);
+}
+
+submitButton.addEventListener('click', pickFamlily);

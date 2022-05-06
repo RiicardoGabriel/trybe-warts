@@ -22,10 +22,10 @@
     <main>
         <section id="container-form">
         <form id="evaluation-form">
-            <div>
+            <div id="name-lastname">
              <input id="input-name" placeholder="Nome">
              <input id="input-lastname" placeholder="Sobrenome">
-            <div>
+            </div>
             <div>
                 <input id="input-email" placeholder="Email">
                 <select id="house">
@@ -38,43 +38,43 @@
             <div>
                 <label for="" id="label-family">Qual sua família?</label><br>
                 <label for="">
-                    <input type="radio" name="family" value="Frontend">Familia Frontend
+                    <input type="radio" name="family" value="Frontend" class="trybe-family" id="front-end">Familia Frontend
                 </label><br>
                 <label for="">
-                    <input type="radio" name="family" value="Backend">Familia Backend
+                    <input type="radio" name="family" value="Backend" class="trybe-family" id="back-end">Familia Backend
                 </label><br>
                 <label for="">
-                    <input type="radio" name="family" value="FullStack">Familia FullStack
+                    <input type="radio" name="family" value="FullStack" class="trybe-family" id="fullstack">Familia FullStack
                 </label>
             </div>
             <div>
                 <label for="" id="label-content">Qual conteúdo você está com mais vontade de aprender?</label><br>
                 <label for="">
                     HoFs
-                    <input type="checkbox" name="" value="HoFs" id="">
+                    <input type="checkbox" name="" value="HoFs" id="" class="subject">
                 </label>
                 <label for="">
                     Jest
-                    <input type="checkbox" name="" value="Jest" id="">
+                    <input type="checkbox" name="" value="Jest" id="" class="subject">
                 </label>
                 <label for="">
                     Promises
-                    <input type="checkbox" name="" value="Promises" id="">
+                    <input type="checkbox" name="" value="Promises" id="" class="subject">
                 </label>
                 <label for="">
                     React
-                    <input type="checkbox" name="" value="React" id="">
+                    <input type="checkbox" name="" value="React" id="" class="subject">
                 </label>
                 <label for="">
                     SQL
-                    <input type="checkbox" name="" value="SQL" id="">
+                    <input type="checkbox" name="" value="SQL" id="" class="subject">
                 </label>
                 <label for="">
                     Python
-                    <input type="checkbox" name="" value="Python" id="">
+                    <input type="checkbox" name="" value="Python" id="" class="subject">
                 </label>
             </div>
-            <div>
+            <div >
                 <label for="" id="label-rate">Como você avalia a Trybewarts?</label><br>
                 <label for="">
                     1
@@ -126,7 +126,7 @@
                 <label for="agreement" id="label-infos">Você concorda com o uso das informações acima?</label>
                 <input type="checkbox" name="" id="agreement">
             </div>
-            <button type="submit" disabled id="submit-btn">Enviar</button>
+            <button type="button" disabled id="submit-btn">Enviar</button>
         </form>
         </section>
         <img id="trybewarts-forms-logo" src="images/trybewarts-colored.svg">
